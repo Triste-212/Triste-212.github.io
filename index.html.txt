@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的AI课堂小助手</title>
+    <style>
+        /* 让页面内容和聊天窗口撑满全屏 */
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    </style>
+</head>
+<body>
+
+<!-- 引入Coze的Chat SDK -->
+<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.1.0-beta.0/libs/cn/index.js"></script>
+
+<script>
+  // 初始化聊天客户端
+  new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: 'https://code.coze.cn/p/7637057994936762368/preview'      // ← 1. 在这里替换成你的Bot ID
+    },
+    auth: {
+      type: 'token',
+      token: 'pat_sN2r3i5onqycNl7BpxkZs2b3Tlk0nKxJPKGUJz5VqoReB7tBCInFftL5zW5cZ7R6'        // ← 2. 在这里替换成你的Personal Access Token
+    },
+    // 为了让页面更简洁，可以隐藏默认的悬浮球，让窗口一直显示
+    ui: {
+      is_hide_floating_ball: true,   // 隐藏悬浮球
+      is_show_open_chat_button: false // 隐藏打开聊天窗口的按钮
+    }
+  });
+</script>
+</body>
+</html>
